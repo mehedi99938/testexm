@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: #222;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* Home */
+        #home {
+            background: #f4f4f4;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        #home h1 {
+            font-size: 40px;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .project button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Skills */
+        .skill {
+            margin-bottom: 15px;
+        }
+
+        .skill-bar {
+            background: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 20px;
+            background: #333;
+        }
+
+        /* Contact */
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button.submit-btn {
+            width: 100%;
+            background: #222;
+            color: #fff;
+            border: none;
+            padding: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Home -->
+<section id="home">
+    <h1>Web Designer & Developer</h1>
+    <p>I create modern and responsive websites.</p>
+</section>
+
+<!-- About -->
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        Hello! I am a passionate web designer and developer who enjoys creating
+        clean, responsive, and user-friendly websites. I love learning new
+        technologies and improving my skills.
+    </p>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+    <h2>Skills</h2>
+
+    <div class="skill">
+        HTML
+        <div class="skill-bar">
+            <div class="skill-level" style="width: 90%;"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        CSS
+        <div class="skill-bar">
+            <div class="skill-level" style="width: 85%;"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        JavaScript
+        <div class="skill-bar">
+            <div class="skill-level" style="width: 75%;"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        Bootstrap
+        <div class="skill-bar">
+            <div class="skill-level" style="width: 80%;"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        Git & GitHub
+        <div class="skill-bar">
+            <div class="skill-level" style="width: 70%;"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="projects">
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <p>A personal portfolio website to showcase my work.</p>
+            <button>View Project</button>
+        </div>
+
+        <div class="project">
+            <h3>Landing Page</h3>
+            <p>A responsive landing page for a business.</p>
+            <button>View Project</button>
+        </div>
+
+        <div class="project">
+            <h3>To-Do App</h3>
+            <p>A simple JavaScript to-do list application.</p>
+            <button>View Project</button>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <form>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="5" placeholder="Message" required></textarea>
+        <button class="submit-btn" type="submit">Submit</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; <span id="year"></span> My Portfolio</p>
+    <p id="datetime"></p>
+
+    <p>
+        <a href="#">Facebook</a> |
+        <a href="#">LinkedIn</a> |
+        <a href="#">GitHub</a>
+    </p>
+</footer>
+
+<script>
+    function updateDateTime() {
+        const now = new Date();
+        document.getElementById("datetime").textContent = now.toLocaleString();
+        document.getElementById("year").textContent = now.getFullYear();
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+</script>
+
+</body>
+</html>
